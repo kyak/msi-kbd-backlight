@@ -57,3 +57,5 @@ Blue color, highest intensity:
 
 **Binary release**
 
+Refer to Releases section in the repository. The binaries were compiled for 64-bit Windows.
+
