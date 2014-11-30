@@ -7,6 +7,7 @@ Control MSI laptop steelseries keyboard backlight using USB HID. I didn't want t
 
 ** Prerequisites **
 
+- Linux host is used for building.
 - mingw compiler. Most distros have it packaged.
 - hidapi library from https://github.com/signal11/hidapi. Some distros have it packaged as e.g. mingw-w64-hidapi.
 
@@ -24,12 +25,12 @@ Inspired by https://github.com/wearefractal/msi-keyboard. Seems very nice, but a
 
 Include libhidapi-0.dll from hidapi when deploying to Windows. You might want to create a scheduled task to run this utility at logon/resume to maintain your backlight preferences (those are reset after reboot or sleep).
 
-** Usage: **
+** Usage **
 
     hid-cli <color num> <intensity num>
     
     Color:
-        off: 0
+	    off: 0
 	    red: 1
 	    orange: 2
 	    yellow: 3
