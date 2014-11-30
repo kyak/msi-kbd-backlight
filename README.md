@@ -1,31 +1,31 @@
 msi-kbd-backlight
 =================
 
-** Description **
+**Description**
 
 Control MSI laptop steelseries keyboard backlight using USB HID. I didn't want to use Steelseries bloatware, just needed something simple like this. There is NO error/input checking in this program.
 
-** Prerequisites **
+**Prerequisites**
 
 - Linux host is used for building.
 - mingw compiler. Most distros have it packaged.
 - hidapi library from https://github.com/signal11/hidapi. Some distros have it packaged as e.g. mingw-w64-hidapi.
 
-** Compilation **
+**Compilation**
 
 Compile like this:
 
     x86_64-w64-mingw32-gcc hid-cli.c -I/usr/i686-w64-mingw32/include/hidapi -lhidapi -o hid-cli.exe
 
-** Acknowledgement **
+**Acknowledgement**
 
 Inspired by https://github.com/wearefractal/msi-keyboard. Seems very nice, but also an overkill.
 
-** Deployment **
+**Deployment**
 
 Include libhidapi-0.dll from hidapi when deploying to Windows. You might want to create a scheduled task to run this utility at logon/resume to maintain your backlight preferences (those are reset after reboot or sleep).
 
-** Usage **
+**Usage**
 
     hid-cli <color num> <intensity num>
     
@@ -45,7 +45,7 @@ Include libhidapi-0.dll from hidapi when deploying to Windows. You might want to
 	    med: 1
 	    high: 0
 
-** Example **
+**Examples**
 
 White color, lowest intensity:
     
@@ -55,5 +55,5 @@ Blue color, highest intensity:
 
     hid_cli 6 0
 
-** Binary release **
+**Binary release**
 
