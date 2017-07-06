@@ -1,0 +1,8 @@
+[Unit]
+Description=Set MSI keyboard backlight
+
+[Service]
+Type=oneshot
+User=yourusername
+ExecStart=/home/yourusername/bin/hid-cli 8 3
+
