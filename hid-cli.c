@@ -1,5 +1,7 @@
 /* Control MSI steelseries keyboard LED using USB HID
  * Compile like this:
+ * gcc hid-cli.c -I/usr/include/hidapi -lhidapi-libusb -o hid-cli
+ * Cross-compile for Windows:
  * x86_64-w64-mingw32-gcc hid-cli.c -I/usr/i686-w64-mingw32/include/hidapi -lhidapi -o hid-cli.exe
  * External dependencies: https://github.com/signal11/hidapi. Some distros have it packaged as e.g. mingw-w64-hidapi
  * Include libhidapi-0.dll from hidapi when deploying to Windows */
@@ -80,8 +82,8 @@ int main(int argc, char* argv[])
 	buf[7] = 236;
 	res = hid_send_feature_report(handle, buf, 8);
 
-	// Finalize the hidapi library
-	res = hid_exit();
+	// Finalize the hidapi library. Not needed, since we return anyway. On Linux, this will cause double free from libc.
+	//res = hid_exit();
 
 	return 0;
 }
