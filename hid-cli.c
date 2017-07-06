@@ -4,7 +4,9 @@
  * External dependencies: https://github.com/signal11/hidapi. Some distros have it packaged as e.g. mingw-w64-hidapi
  * Include libhidapi-0.dll from hidapi when deploying to Windows */
 
+#ifdef WIN32
 #include <windows.h>
+#endif
 #include <stdio.h>
 #include <stdlib.h>
 #include "hidapi.h"
@@ -31,7 +33,7 @@ int main(int argc, char* argv[])
 "	lowest: 3,\n"
 "	low: 2,\n"
 "	med: 1,\n"
-"	high: 0";
+"	high: 0\n";
 	
 	if (argc < 2)
 	{
